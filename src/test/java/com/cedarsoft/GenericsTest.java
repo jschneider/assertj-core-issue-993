@@ -3,7 +3,6 @@ package com.cedarsoft;
 import org.assertj.core.api.*;
 import org.junit.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,13 +13,6 @@ public class GenericsTest {
   @Test
   public void testGenerics() throws Exception {
     List<? extends String> strings = Arrays.asList("a", "b", "c");
-    ListAssert<? extends String> listAssert = Assertions.assertThat(strings);
-    listAssert.hasSize(3);
-  }
-
-  @Test
-  public void testOtherGenerics() throws Exception {
-    List strings = new ArrayList();
-    strings.add("asdf");
+    Assertions.assertThat(strings).hasSize(3);
   }
 }
